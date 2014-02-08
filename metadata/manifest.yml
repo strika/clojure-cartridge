@@ -23,29 +23,6 @@ Scaling:
   Min: 1
   Max: -1
 
-Publishes:
-  publish-http-url:
-    Type: "NET_TCP:httpd-proxy-info"
-  publish-gear-endpoint:
-    Type: "NET_TCP:gear-endpoint-info"
-
-Subscribes:
-  set-db-connection-info:
-    Type: "NET_TCP:db:connection-info"
-    Required: false
-  set-nosql-db-connection-info:
-    Type: "NET_TCP:nosqldb:connection-info"
-    Required: false
-  set-mysql-connection-info:
-    Type: "NET_TCP:db:mysql"
-    Required : false
-  set-postgres-connection-info:
-    Type: "NET_TCP:db:postgres"
-    Required : false
-  set-doc-url:
-    Type: "STRING:urlpath"
-    Required : false
-
 Endpoints:
   - Private-IP-Name:   HTTP_IP
     Private-Port-Name: HTTP_PORT
@@ -55,7 +32,3 @@ Endpoints:
       - Frontend:      ""
         Backend:       ""
         Options:       { websocket: false }
-      - Frontend:      "/health"
-        Backend:       ""
-        Options:       { health: true }
-
